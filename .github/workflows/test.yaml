@@ -1,0 +1,28 @@
+name: Build and Test
+
+on:
+  push:
+    branches:
+      - [main]
+  pull_request:
+    branches:
+      - [main]
+jobs:
+  build-test:
+    runs-on: ${{ matrix.os }}
+    strategy:
+      matrix:
+        os: [ubuntu-latest, macos-latest]          
+    steps:
+      - name: Clonando mi repositorio
+        uses: actions/checkout@v4
+      - name: Configurando SDK de .Net
+        uses: actions/setup-dotnet@v4
+        with:
+          dotnet-version: '8.0.x'
+      - name: Descargando dependencias
+        run: dotnet restore
+      - name: Compilando solución
+        run: dotnet build --no-restore
+      - name: Ejecutando tests
+        run: dotnet test --no-build
