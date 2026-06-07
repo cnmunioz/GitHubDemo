@@ -22,7 +22,7 @@ namespace GitHubDemoTest
         {
             var client = _factory.CreateClient();
 
-            var response = await client.GetAsync("/api/demo");
+            var response = await client.GetAsync("/api/saludo");
 
             Assert.Equal(HttpStatusCode.OK, response.StatusCode);
         }
