@@ -8,17 +8,17 @@ using Microsoft.AspNetCore.Mvc.Testing;
 
 namespace GitHubDemoTest
 {
-    public class SaludoTests : IClassFixture<WebApplicationFactory<Program>>
+    public class DemoTests : IClassFixture<WebApplicationFactory<Program>>
     {
         private readonly WebApplicationFactory<Program> _factory;
 
-        public SaludoTests(WebApplicationFactory<Program> factory)
+        public DemoTests(WebApplicationFactory<Program> factory)
         {
             _factory = factory;
         }
 
         [Fact]
-        public async Task GetSaludoDebeRetornar200()
+        public async Task GetDemoDebeRetornar200()
         {
             var client = _factory.CreateClient();
 
