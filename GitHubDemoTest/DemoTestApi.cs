@@ -8,21 +8,21 @@ using Microsoft.AspNetCore.Mvc.Testing;
 
 namespace GitHubDemoTest
 {
-    public class DemoTests : IClassFixture<WebApplicationFactory<Program>>
+    public class SaludoTests : IClassFixture<WebApplicationFactory<Program>>
     {
         private readonly WebApplicationFactory<Program> _factory;
 
-        public DemoTests(WebApplicationFactory<Program> factory)
+        public SaludoTests(WebApplicationFactory<Program> factory)
         {
             _factory = factory;
         }
 
         [Fact]
-        public async Task GetDemoDebeRetornar200()
+        public async Task GetSaludoDebeRetornar200()
         {
             var client = _factory.CreateClient();
 
-            var response = await client.GetAsync("/api/saludo");
+            var response = await client.GetAsync("/api/demo");
 
             Assert.Equal(HttpStatusCode.OK, response.StatusCode);
         }
