@@ -3,7 +3,7 @@ name: Deploy Release 3
 on:
   push:
     tags:
-      - 'v*'
+      - 'y*'
       
 permissions:
   contents: write
