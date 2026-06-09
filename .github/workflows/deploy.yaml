@@ -1,9 +1,9 @@
-name: Deploy Release 3
+name: Deploy Release
 
 on:
   push:
     tags:
-      - 'y*'
+      - 'v*'
       
 permissions:
   contents: write
